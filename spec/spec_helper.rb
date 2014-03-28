@@ -4,7 +4,7 @@ require 'fileutils'
 require 'hatchet'
 require 'rspec/retry'
 require 'language_pack'
-
+require 'cloud_foundry/buildpack_packager'
 require 'language_pack'
 
 ENV['RACK_ENV'] = 'test'
@@ -21,6 +21,14 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
   config.mock_with :none
+
+  config.before :suite do
+    CloudFoundry::BuildpackPackager.package
+  end
+
+  config.after :suite do
+    `rm ruby_buildpack.zip`
+  end
 end
 
 def git_repo
