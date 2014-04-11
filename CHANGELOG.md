@@ -1,19 +1,33 @@
-## CloudFoundry
+## Master
 
-## cf-v2 (4-9-2014)
-
-Bugfixes:
-
-* remove libyaml 0.1.5. It's not used and has a security flaw.
-
-## cf-v1 (4-9-2014)
+## v116 (4/10/2014)
 
 Features:
 
-* introduce package task with offline (on premises) support
-* disable pre-cached gems which are not binary compatible with the Cloud Foundry environment
 
-## Master
+Bugfixes:
+
+* Revert back to Bundler 1.5.2
+
+
+## v115 (4/9/2014)
+
+Features:
+
+
+Bugfixes:
+
+* Add default process types to all apps deployed regardless of `Procfile`
+
+## v114 (4/9/2014)
+
+Features:
+
+* Bundler 1.6.1
+* Warn when not using a Procfile (looking at you webrick)
+
+Bugfixes:
+
 
 ## v113 (4/8/2014)
 
